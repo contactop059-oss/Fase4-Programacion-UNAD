@@ -1,6 +1,8 @@
 
 import logging
 
+from entidad import Entidad
+
 logging.basicConfig(
     filename="sistema.log",
     level=logging.INFO,
@@ -13,7 +15,7 @@ class ErrorCliente(Exception):
     pass
 
 
-class Cliente:
+class Cliente(Entidad):
     """Representa un cliente de Software FJ."""
 
     def __init__(self, identificacion, nombre, correo):
