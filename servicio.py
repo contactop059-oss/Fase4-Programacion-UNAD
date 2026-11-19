@@ -1,13 +1,13 @@
 
 from abc import ABC, abstractmethod
-
+from entidad import Entidad
 
 class ErrorServicio(Exception):
     """Excepción personalizada para servicios."""
     pass
 
 
-class Servicio(ABC):
+class Servicio(Entidad):
     """Clase abstracta general para los servicios."""
 
     def __init__(self, codigo, nombre, tarifa):
@@ -36,6 +36,21 @@ class Servicio(ABC):
     def describir(self):
         """Devuelve la descripción del servicio."""
         pass
+
+    @abstractmethod
+    def validar_parametros(self, duracion):
+        """Valida los parámetros del servicio."""
+        pass
+
+    def mostrar_informacion(self):
+        return (
+            f"Código: {self.codigo} | "
+            f"Servicio: {self.nombre} | "
+            f"Tarifa: ${self.tarifa:,.2f} | "
+            f"Disponible: {self.disponible}"
+        )
+
+    def verificar_duracion(self, duracion):
 
     @abstractmethod
     def validar_parametros(self, duracion):
