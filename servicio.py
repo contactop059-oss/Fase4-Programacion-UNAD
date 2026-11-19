@@ -50,12 +50,7 @@ class Servicio(Entidad):
             f"Disponible: {self.disponible}"
         )
 
-    def verificar_duracion(self, duracion):
-
-    @abstractmethod
-    def validar_parametros(self, duracion):
-        """Valida los parámetros del servicio."""
-        pass
+    
 
     def verificar_duracion(self, duracion):
         if (
